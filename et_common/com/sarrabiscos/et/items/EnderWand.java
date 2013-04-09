@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 /**
  * EnderTech
  * 
- * EnderTech
+ * EnderWand
  * 
  * @author sarrabiscos
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
