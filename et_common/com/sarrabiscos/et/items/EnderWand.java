@@ -6,6 +6,16 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
+/**
+ * EnderTech
+ * 
+ * EnderTech
+ * 
+ * @author sarrabiscos
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class EnderWand extends Item {
 
 	public EnderWand(int id) {

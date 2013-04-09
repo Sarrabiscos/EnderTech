@@ -7,6 +7,17 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 import com.sarrabiscos.et.items.Items;
 
+/**
+ * EnderTech
+ * 
+ * EnderTech
+ * 
+ * @author sarrabiscos
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
+
 @Mod(modid = EnderTech.modid, name = "EnderTech", version = "1.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class EnderTech {

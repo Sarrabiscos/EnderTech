@@ -3,6 +3,16 @@ package com.sarrabiscos.et.items;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
 
+/**
+ * EnderTech
+ * 
+ * EnderTech
+ * 
+ * @author sarrabiscos
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class Items {
 	
 	public static Item enderWand;
