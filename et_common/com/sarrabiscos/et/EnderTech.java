@@ -1,22 +1,18 @@
 package com.sarrabiscos.et;
 
-import cpw.mods.fml.common.Mod.Init;
+import com.sarrabiscos.et.item.Items;
+
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-import com.sarrabiscos.et.items.Items;
-
-/**
- * EnderTech
+/** EnderTech
  * 
  * EnderTech
  * 
  * @author sarrabiscos
- * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
- */
-
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html) */
 
 @Mod(modid = EnderTech.modid, name = "EnderTech", version = "1.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
