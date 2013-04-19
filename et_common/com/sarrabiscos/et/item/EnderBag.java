@@ -6,6 +6,13 @@ import net.minecraft.inventory.InventoryEnderChest;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+/** EnderTech
+ * 
+ * EnderBag
+ * 
+ * @author sarrabiscos
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html) */
+
 public class EnderBag extends ItemET {
 
 	public EnderBag(int id) {

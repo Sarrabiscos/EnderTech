@@ -8,6 +8,13 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 
+/** EnderTech
+ * 
+ * ItemET
+ * 
+ * @author sarrabiscos
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html) */
+
 public class ItemET extends Item {
 
     public ItemET(int id) {
