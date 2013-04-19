@@ -17,10 +17,10 @@ public class Items {
 
 	public static void init() {
 
-		enderWand = new EnderWand(5000).setUnlocalizedName("enderWand");
+		enderWand = new EnderWand(500).setUnlocalizedName("enderWand");
 		LanguageRegistry.addName(enderWand, "Ender Wand");
 		
-		enderBag = new EnderBag(5001).setUnlocalizedName("enderBag");
+		enderBag = new EnderBag(501).setUnlocalizedName("enderBag");
 		LanguageRegistry.addName(enderBag, "Ender Bag");
 	}
 
