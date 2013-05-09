@@ -26,6 +26,8 @@ public class EnderBag extends ItemET {
 				.getInventoryEnderChest();
 		if (!world.isRemote) {
 			entityPlayer.displayGUIChest(inventoryenderchest);
+			world.playSoundAtEntity(entityPlayer, "random.chestopen", 0.5F,
+					0.85F);
 		}
 		return itemStack;
 	}

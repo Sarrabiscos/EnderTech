@@ -1,6 +1,7 @@
 package com.sarrabiscos.et;
 
 import com.sarrabiscos.et.item.Items;
+import com.sarrabiscos.et.block.Blocks;
 import com.sarrabiscos.et.lib.Reference;
 
 import cpw.mods.fml.common.Mod;
@@ -26,6 +27,7 @@ public class EnderTech {
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		Items.init();
+		Blocks.init();
 	}
 
 	@Init

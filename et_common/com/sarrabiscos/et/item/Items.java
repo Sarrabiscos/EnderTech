@@ -22,6 +22,7 @@ public class Items {
 		
 		enderBag = new EnderBag(501).setUnlocalizedName("enderBag");
 		LanguageRegistry.addName(enderBag, "Ender Bag");
+		
 	}
 
 }

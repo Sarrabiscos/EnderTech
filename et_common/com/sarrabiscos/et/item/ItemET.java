@@ -6,6 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 /** EnderTech
@@ -17,17 +18,20 @@ import net.minecraft.item.Item;
 
 public class ItemET extends Item {
 
-    public ItemET(int id) {
+	public ItemET(int id) {
+		super(id);
+		maxStackSize = 1;
+		setNoRepair();
+		this.setCreativeTab(CreativeTabs.tabMisc);
+	}
 
-        super(id);
-        maxStackSize = 1;
-        setNoRepair();
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister iconRegister) {
-
-    	this.iconIndex = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void updateIcons(IconRegister iconRegister) {
+		this.iconIndex = iconRegister.registerIcon(Reference.MOD_ID
+				.toLowerCase()
+				+ ":"
+				+ this.getUnlocalizedName().substring(
+						this.getUnlocalizedName().indexOf(".") + 1));
+	}
 }
