@@ -27,11 +27,8 @@ public class ItemET extends Item {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void updateIcons(IconRegister iconRegister) {
-		this.iconIndex = iconRegister.registerIcon(Reference.MOD_ID
-				.toLowerCase()
-				+ ":"
-				+ this.getUnlocalizedName().substring(
-						this.getUnlocalizedName().indexOf(".") + 1));
-	}
+    public void registerIcons(IconRegister par1IconRegister)
+ {
+     this.itemIcon = par1IconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
+ }
 }
