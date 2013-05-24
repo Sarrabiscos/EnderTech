@@ -1,0 +1,96 @@
+<?xml version="1.0" ?> 
+<project name="EnderTech">
+
+	<property file="build.properties" />
+
+	<target name="cleanup">
+		<delete file="${dir.development}\mcp\src\minecraft\mcmod.info" />
+		<delete dir="${dir.development}\mcp\src\minecraft\com" />
+		<delete dir="${dir.development}\mcp\reobf\minecraft" />
+	</target>
+
+	<target name="build">
+		<copy todir="${dir.development}\mcp\src\minecraft">
+			<fileset dir="${dir.development}\source\EnderTech\et_common\" />
+		</copy>
+		<replace dir="${dir.development}\mcp\src\minecraft" token="@VERSION@" value="${release.mod.version}" />
+	</target>
+
+	<target name="recompile">
+		<exec dir="${dir.development}\mcp" executable="cmd" os="Windows 7">
+			<arg line="/c recompile.bat" />
+		</exec>
+		<exec dir="${dir.development}\mcp" executable="cmd" os="Windows 8">
+			<arg line="/c recompile.bat" />
+		</exec>
+		<exec dir="${dir.development}\mcp" executable="bash" os="Linux">
+			<arg line="recompile.sh" />
+		</exec>
+		<exec dir="${dir.development}\mcp" executable="bash" os="Mac OS X">
+			<arg line="recompile.sh" />
+		</exec>
+	</target>
+
+	<target name="reobfuscate">
+		<exec dir="${dir.development}\mcp" executable="cmd" os="Windows 7">
+			<arg line="/c reobfuscate.bat" />
+		</exec>
+		<exec dir="${dir.development}\mcp" executable="cmd" os="Windows 8">
+			<arg line="/c reobfuscate.bat" />
+		</exec>
+		<exec dir="${dir.development}\mcp" executable="bash" os="Linux">
+			<arg line="reobfuscate.sh" />
+		</exec>
+		<exec dir="${dir.development}\mcp" executable="bash" os="Mac OS X">
+			<arg line="reobfuscate.sh" />
+		</exec>
+	</target>
+
+	<target name="release-shared">
+		<!-- Prep for the release -->
+		<antcall target="cleanup" />
+		<antcall target="build" />
+		<antcall target="recompile" />		
+		<antcall target="reobfuscate" />
+
+		<!-- Build the jar -->
+		<mkdir dir="${dir.share}\${release.minecraft.version}\${release.mod.version}" />
+		<jar destfile="${dir.share}\${release.minecraft.version}\${release.mod.version}\EnderTech_${release.mod.version}_${release.minecraft.version}.jar">
+			<fileset dir="${dir.development}\mcp\src\common\"	includes="mcmod.info" />
+			<fileset dir="${dir.development}\mcp\reobf\minecraft" />
+			<fileset dir="${dir.development}\source\EnderTech\resources" />
+		</jar>
+
+		<!-- Clean up the MCP source now that we are done -->
+		<antcall target="cleanup" />
+	</target>
+
+	<target name="release">
+		<!-- Prep for the release -->
+		<antcall target="cleanup" />
+		<antcall target="build" />
+		<antcall target="recompile" />		
+		<antcall target="reobfuscate" />
+
+		<!-- Build the jar -->
+		<mkdir dir="${dir.release}\${release.minecraft.version}\${release.mod.version}" />
+		<jar destfile="${dir.release}\${release.minecraft.version}\${release.mod.version}\EnderTech_${release.mod.version}_${release.mod.prerelease}_${release.minecraft.version}.jar">
+			<fileset dir="${dir.development}\mcp\src\minecraft\" includes="mcmod.info" />
+			<fileset dir="${dir.development}\mcp\reobf\minecraft" />
+			<fileset dir="${dir.development}\source\EnderTech\resources">
+				<exclude name="\mods\exc\sound\"/>
+				<exclude name="\mods\exc\textures\"/>
+				<exclude name="\mods\exc\models\"/>
+			</fileset>
+			<fileset dir="${dir.development}\source\EnderTech\resources\mods\exc">
+				<exclude name="\lang\" />
+				<exclude name="\sound\"/>
+				<exclude name="\models\"/>
+			</fileset>	
+		</jar>
+
+		<!-- Clean up the MCP source now that we are done -->
+		<antcall target="cleanup" />
+	</target>
+
+</project>
