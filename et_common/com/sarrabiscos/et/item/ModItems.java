@@ -10,10 +10,11 @@ import net.minecraft.item.Item;
  * @author sarrabiscos
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html) */
 
-public class Items {
+public class ModItems {
 
 	public static Item enderWand;
 	public static Item enderBag;
+	public static Item enderMultiTool;
 
 	public static void init() {
 
@@ -22,6 +23,10 @@ public class Items {
 		
 		enderBag = new EnderBag(501).setUnlocalizedName("enderBag");
 		LanguageRegistry.addName(enderBag, "Ender Bag");
+		
+		// Disabled
+		//enderMultiTool = new EnderMultiTool(502).setUnlocalizedName("enderMultiTool");
+		//LanguageRegistry.addName(enderMultiTool, "Ender Multi Tool");
 		
 	}
 

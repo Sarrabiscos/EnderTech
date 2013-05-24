@@ -1,7 +1,10 @@
 package com.sarrabiscos.et;
 
-import com.sarrabiscos.et.item.Items;
-import com.sarrabiscos.et.block.Blocks;
+import net.minecraft.creativetab.CreativeTabs;
+
+import com.sarrabiscos.et.item.ModItems;
+import com.sarrabiscos.et.block.ModBlocks;
+import com.sarrabiscos.et.creativetab.CreativeTabET;
 import com.sarrabiscos.et.lib.Reference;
 
 import cpw.mods.fml.common.Mod;
@@ -23,11 +26,13 @@ import cpw.mods.fml.common.network.NetworkMod;
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class EnderTech {
+	
+	public static CreativeTabs tabsET = new CreativeTabET(CreativeTabs.getNextID(), Reference.MOD_ID);
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
-		Items.init();
-		Blocks.init();
+		ModItems.init();
+		ModBlocks.init();
 	}
 
 	@Init

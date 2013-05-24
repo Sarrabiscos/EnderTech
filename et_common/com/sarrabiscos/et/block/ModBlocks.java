@@ -11,7 +11,7 @@ import com.sarrabiscos.et.lib.Reference;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class Blocks {
+public class ModBlocks {
 
 	public static Block enderBlock;
 
@@ -25,11 +25,11 @@ public class Blocks {
 				Reference.MOD_ID + enderBlock.getUnlocalizedName2());
 		LanguageRegistry.addName(enderBlock, "Ender Block");
 
-		GameRegistry.addRecipe(new ItemStack(Blocks.enderBlock, 1), new Object[] { "XXX",
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.enderBlock, 1), new Object[] { "XXX",
 				"XXX", "XXX", 'X', Item.enderPearl });
 
 		GameRegistry.addShapelessRecipe(new ItemStack(Item.enderPearl, 9),
-				new Object[] { new ItemStack(Blocks.enderBlock) });
+				new Object[] { new ItemStack(ModBlocks.enderBlock) });
 
 	}
 

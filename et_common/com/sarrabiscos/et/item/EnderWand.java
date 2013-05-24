@@ -1,13 +1,11 @@
 package com.sarrabiscos.et.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityEnderPearl;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 /** EnderTech
  * 
@@ -20,7 +18,6 @@ public class EnderWand extends ItemET {
 
 	public EnderWand(int id) {
 		super(id);
-		this.setCreativeTab(CreativeTabs.tabTools);
 	}
 
 

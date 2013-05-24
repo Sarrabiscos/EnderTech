@@ -1,13 +1,13 @@
 package com.sarrabiscos.et.item;
 
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.Item;
+
+import com.sarrabiscos.et.EnderTech;
 import com.sarrabiscos.et.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 
 /** EnderTech
  * 
@@ -22,7 +22,7 @@ public class ItemET extends Item {
 		super(id);
 		maxStackSize = 1;
 		setNoRepair();
-		this.setCreativeTab(CreativeTabs.tabMisc);
+		this.setCreativeTab(EnderTech.tabsET);
 	}
 
 	@Override
